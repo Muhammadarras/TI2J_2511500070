@@ -1,9 +1,5 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "db_penjadwalan";
-$conn = mysqli_connect($host, $user, $pass, $db);
+ $conn = mysqli_connect("localhost", "root", "", "jadwal");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,35 +33,14 @@ $conn = mysqli_connect($host, $user, $pass, $db);
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
         </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
       </li>
     </ul>
   </nav>
-  
+
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" class="brand-link">
+    <a href="index.php" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Jadwal Sekolah XYZ</span>
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <div class="sidebar">
@@ -74,67 +49,71 @@ $conn = mysqli_connect($host, $user, $pass, $db);
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin TU</a>
+          <a href="#" class="d-block">Alexander Pierce</a>
         </div>
       </div>
 
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
-          <li class="nav-item">
-            <a href="index.php" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                DATA MASTER
+                Master
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="guru.php" class="nav-link">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Data Guru</p>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mata Pelajaran</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="siswa.php" class="nav-link">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Data Siswa</p>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Guru</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="mapel.php" class="nav-link">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Data Mapel</p>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Siswa</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="kelas.php" class="nav-link">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Data Kelas</p>
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kelas</p>
                 </a>
               </li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a href="jadwal.php" class="nav-link">
-              <i class="nav-icon fas fa-calendar-alt"></i>
-              <p>Jadwal Pelajaran</p>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Transaksi
+                <i class="right fas fa-angle-left"></i>
+              </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item">
-            <a href="user.php" class="nav-link">
-              <i class="nav-icon fas fa-user-cog"></i>
-              <p>Manajemen User</p>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Logout</p>
             </a>
           </li>
         </ul>
@@ -147,36 +126,21 @@ $conn = mysqli_connect($host, $user, $pass, $db);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Halaman Utama</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
+            <h1 class="m-0">Starter Page</h1>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
 
     <div class="content">
       <div class="container-fluid">
-        <div class="row">``
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-                <p>Siswa</p>
-              </div>
-              <div class="icon"><i class="fas fa-users"></i></div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <div class="card card-primary card-outline">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Selamat Datang</h5>
+                <h5 class="card-title">Dashboard</h5>
                 <p class="card-text">
-                  Ini adalah Sistem Penjadwalan Sekolah XYZ. Silakan gunakan menu di samping untuk mengelola data.
+                  Selamat Datang di Sistem Jadwal Guru pada SMA/SMK XYZ
                 </p>
               </div>
             </div>
@@ -188,9 +152,9 @@ $conn = mysqli_connect($host, $user, $pass, $db);
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline">
-      PWD - Terstruktur to OOP
+      Anything you want
     </div>
-    <strong>Copyright &copy; 2026 <a href="#">Sekolah XYZ</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 </div>
 
