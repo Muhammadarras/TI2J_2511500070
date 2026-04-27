@@ -1,5 +1,7 @@
 <?php
- $conn = mysqli_connect("localhost", "root", "", "jadwal");
+session_start();
+require_once("config/koneksi.php");
+if(isset($_SESSION['Username'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +51,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['Username']; ?></a>
         </div>
       </div>
 
@@ -59,10 +61,7 @@
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Master
-                <i class="right fas fa-angle-left"></i>
-              </p>
+              <p>Master <i class="right fas fa-angle-left"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -93,12 +92,9 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Transaksi
-                <i class="right fas fa-angle-left"></i>
-              </p>
+              <p>Transaksi <i class="right fas fa-angle-left"></i></p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -111,7 +107,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="logout.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Logout</p>
             </a>
@@ -151,10 +147,8 @@
   </div>
 
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <div class="float-right d-none d-sm-inline">Anything you want</div>
+    <strong>Copyright &copy; 2014-2021 <a href="#">AdminLTE.io</a>.</strong>
   </footer>
 </div>
 
@@ -163,3 +157,8 @@
 <script src="dist/js/adminlte.min.js"></script>
 </body>
 </html>
+<?php
+} else {
+    echo "<meta http-equiv='refresh' content='0 url=login.php'>";
+}
+?>
